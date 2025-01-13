@@ -1,6 +1,12 @@
+MSSFOP_RQM-0001: Improving
+=========Git issue=================================
+--Large file issue--
+git lfs migrate import --include="Head_First_Java_A_Brain-Friendly_Guide.pdf"
+push
 
 =========Java Class Loader=========================
-Class Loaders
+Class Loaders - https://www.cloudtechtwitter.com/2022/09/jvm-java-virtual-machine-architecture.html
+see - /Resources/JVM-Architechture.png
 https://www.youtube.com/watch?v=Dpuy8WUBq9w
 
 Class loaders are responsible for loading Java classes dynamically to the JVM (Java Virtual Machine) during runtime. They’re also part of the JRE (Java Runtime Environment). Therefore, the JVM doesn’t need to know about the underlying files or file systems in order to run Java programs thanks to class loaders.

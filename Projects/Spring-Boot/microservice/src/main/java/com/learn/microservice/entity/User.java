@@ -5,13 +5,11 @@ import java.time.LocalDate;
 import com.fasterxml.jackson.annotation.JsonFilter;
 
 import jakarta.validation.constraints.Past;
-import jakarta.validation.constraints.Size;
 
 @JsonFilter(value = "IgoreBrithdate")
 public class User {
 
 	private long id;
-	@Size(min = 3, max = 20, message = "Name should be between 3 to 20 char")
 	private String name;
 	@Past(message = "Birthday should be past date")
 	private LocalDate birthdate;

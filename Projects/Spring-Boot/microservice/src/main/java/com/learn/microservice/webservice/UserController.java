@@ -4,11 +4,9 @@ import java.net.URI;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.repository.query.Param;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.json.MappingJacksonValue;
-import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -52,15 +50,6 @@ public class UserController {
 		return new ResponseEntity<User>(user, HttpStatus.OK);
 	}
 
-	@GetMapping(path = "/{id}", params = "version=2")
-	public ResponseEntity<User> retrieveUser1(@PathVariable long id) {
-
-		User user = service.find(1);
-		if (null == user) {
-			throw new UserNotExistException(String.format("User Not Exist "));
-		}
-		return new ResponseEntity<User>(user, HttpStatus.OK);
-	}
 
 	@GetMapping(path = "/{id}", params = "version=3")
 	public ResponseEntity<MappingJacksonValue> retrieveUserFiltering(@PathVariable long id) {
